@@ -18,14 +18,24 @@ strategy:
       vm.image: 'ubuntu-latest'
       python.version: '3.8'
     win_py36:
-      vm.image: 'vs2017-win2016'
+      vm.image: 'windows-latest'
       python.version: '3.6'
     win_py37:
-      vm.image: 'vs2017-win2016'
+      vm.image: 'windows-latest'
       python.version: '3.7'
     win_py38:
-      vm.image: 'vs2017-win2016'
+      vm.image: 'windows-latest'
       python.version: '3.8'
+    macos_py36:
+      vm.image: 'macos-latest'
+      python.version: '3.6'
+    macos_py37:
+      vm.image: 'macos-latest'
+      python.version: '3.7'
+    macos_py38:
+      vm.image: 'macos-latest'
+      python.version: '3.8'
+
 
 
 pool:
@@ -41,7 +51,6 @@ steps:
     python -m pip install --upgrade pip
     pip install pipenv
     pipenv install --dev --ignore-pipfile
-    pipenv install --dev atomicwrites
   displayName: 'Install dependencies'
 
 # - script: |

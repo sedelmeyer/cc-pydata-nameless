@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+tox = "*"
+pytest = "*"
+pytest-cov = "*"
+flake8 = "*"
+sphinx = "*"
+
+[packages]
+cc_pydata_nameless = {editable = true,path = "."}
+
+[requires]
+python_version = "3.7"

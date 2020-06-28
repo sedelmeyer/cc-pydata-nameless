@@ -40,8 +40,8 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install pipenv
-    pip install atomicwrites
     pipenv install --dev --ignore-pipfile
+    pipenv install --dev atomicwrites
   displayName: 'Install dependencies'
 
 # - script: |
@@ -50,7 +50,7 @@ steps:
 #   displayName: 'Install dependencies'
 
 - script: |
-    pipenv run python -m pytest -v
+    pytest -v
   displayName: 'Run tests'
 
 # - script: |

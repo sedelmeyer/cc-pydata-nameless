@@ -37,22 +37,21 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use $(vm.image) Python $(python.version)'
 
+- script: |
+    python -m pip install --upgrade pip
+    pip install pipenv
+    pipenv install --dev --ignore-pipfile
+  displayName: 'Install dependencies'
+
 # - script: |
 #     python -m pip install --upgrade pip
-#     pip install pipenv
-#     pipenv install --dev --ignore-pipfile
+#     pip install tox
 #   displayName: 'Install dependencies'
 
 - script: |
-    python -m pip install --upgrade pip
-    pip install tox
-  displayName: 'Install dependencies'
-
+    pipenv run python -m pytest -v
+  displayName: 'Run tests'
 
 # - script: |
-#     pipenv run pytest -v
-#   displayName: 'Run tests'
-
-- script: |
-    tox
-  displayName: 'Run tox'
+#     tox
+#   displayName: 'Run tox'

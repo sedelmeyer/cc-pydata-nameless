@@ -50,7 +50,7 @@ steps:
 #   displayName: 'Install dependencies'
 
 - script: |
-    pytest -v
+    pipenv run pytest -v
   displayName: 'Run tests'
 
 # - script: |

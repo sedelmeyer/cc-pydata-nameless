@@ -9,6 +9,7 @@ pytest = "*"
 pytest-cov = "*"
 flake8 = "*"
 sphinx = "*"
+atomicwrites = "*"
 
 [packages]
 cc_pydata_nameless = {editable = true,path = "."}
